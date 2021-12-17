@@ -1,0 +1,14 @@
+<h1  class="text-4xl ml-4 animate" [ngClass]="{ 'fadeOutLeft': validJSON}">Step 1</h1>
+<div class="card p-4 mt-2 animate" [ngClass]="{ 'fadeOutLeft': validJSON}">
+  <label>Insert your JSON model to retrieve the values to update</label>
+  <textarea class="shadow-sm border w-full rounded-md min-h-[340px] resize-none p-2" [ngClass]="{ 'border-red-500': error }" #jsonModel></textarea>
+  <p *ngIf="error" class="text-red-500">Your JSON model is not a valid JSON format</p>
+  <div class="w-full mt-2 flex justify-end">
+    <button
+      class="flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+      (click)="onSubmit.emit(jsonModel.value)"
+    >
+      {{!error ? "Accept" : "😧 Try again"}}
+    </button>
+  </div>
+</div>

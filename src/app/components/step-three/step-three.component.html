@@ -1,0 +1,25 @@
+<h1 class="text-4xl ml-4 animate" [ngClass]="{ 'fadeInRight block': newJson, hidden: !newJson }">Step 3</h1>
+<div class="card p-4 mt-2 w-[1200px] relative" [ngClass]="{ 'fadeInRight block': newJson, hidden: !newJson }">
+  <p>Enjoy your updated JSON 🙂</p>
+  <div class="p-4 max-h-[400px] overflow-y-auto">
+    <pre class="w-full h-full">
+      <code>
+        {{newJson}}
+      </code>
+    </pre>
+  </div>
+  <button
+    class="flex items-center justify-center p-3 m-1 text-sm font-medium rounded-md text-black hover:border absolute top-0 left-[300px]"
+    (click)="copyText()"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+      />
+    </svg>
+    {{ copied ? "Copied 👍" : "Copy To Clipboard" }}
+  </button>
+</div>

@@ -1,0 +1,6 @@
+<div class="p-1 overflow-x-auto">
+  <label class="block text-sm font-bold text-gray-700">{{key}}</label>
+  <div>
+    <input #input (change)="handleChange.emit(input.value)" type="text" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 w-[300px] border-gray-300 rounded-md p-2" [placeholder]="key">
+  </div>
+</div>
